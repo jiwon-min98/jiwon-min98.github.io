@@ -1,2 +1,2 @@
-# jiwon-min98.github.io
-This is my website
+
+This is my personal website jiwon-min98.github.io
