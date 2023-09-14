@@ -1,0 +1,168 @@
+/* Reset some default margin and padding */
+*, ::before,::after {
+    margin: 0;
+    padding: 0;
+}
+
+p, li {
+    color: #666;
+    font-size: 22px;
+}
+
+
+/* Global Styles */
+html{
+    scroll-behavior:smooth;
+    line-height:1.15;
+    -webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent;
+}
+body {
+    font-family: 'Poppins','Pretendard', sans-serif;
+    line-height: 1.6;
+}
+
+section{
+    position: relative;
+    height:90vh;
+    padding-top:60px;
+}
+
+.section-title{
+    font-size: 32px;
+}
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.display-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Navigation styles */
+.nav {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    background-color: #fff;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    background-color: #f4f4f4;
+    padding-top: 180px;
+}
+
+
+.profile-pic{
+    border-radius: 45%;
+}
+.welcome-content{
+    margin:20px;
+}
+
+.name {
+    font-size: 36px;
+    color: #333;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+/* Education Section Styles */
+.education-section {
+    background-color: #fff;
+}
+
+.education-section h1{
+    font-size: 32px;
+}
+
+.education-item {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.education-degree {
+    font-weight: bold;
+    color: #666;
+}
+/* Projects Section Styles */
+.projects-section {
+    background-color: #f4f4f4;
+}
+
+
+.project{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.project h2 {
+    color: #333;
+}
+
+.project a{
+    text-decoration: none;
+    color:#333;
+}
+/*.project a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}*/
+
+.project a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Experiences section */
+.experience{
+    margin-top:20px;
+}
+
+
+/*Skills section*/
+.skills-section{
+    background-color: #f4f4f4;
+}
+
+.skill{
+    margin-top:20px;
+}
