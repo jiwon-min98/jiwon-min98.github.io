@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("navbar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("navbar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        // Scroll to section when a navigation link is clicked
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetSectionId = link.getAttribute('href');
+                document.querySelector(targetSectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Machine Learning in Finance</title>
+    </head>
+    <body>
+        <!-- START NAV -->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <li><h1 class="title">ML in Finance</h1></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#neuralnetworks">Neural Networks</a></li>
+                <li><a href="#UniversalApproximation">Universal Approximation</a></li>
+                <li><a href="#DeepHedging">Deep Hedging</a></li>
+                <li><a href="/website/index.html">Home</a></li>
+            </ul>
+        </nav>
+        <!-- Use any element to open the sidenav -->
+        <span onclick="openNav()" class="icon">
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+        </span>
+        <!-- END NAV -->
+        <div class="main" id="main">
+            <!-- START LECTURES -->
+            <div class="lecture" id="introduction">
+                <h1 class="title">Machine Learning in Finance</h1>
+                <h2> Introduction</h2>
+                <p> Follows the lecture developed by Christa Cuchiero and Josef Teichmann</p>
+            </div>
+            <div class="lecture" id="neuralnetworks">
+                <h2>Neural Networks</h2>
+                <p>Let $X$ be a compact space, i.e. a compact topological Hausdorff space, and let $(f_i)_i$
+                    be a family of real valued continuous functions on $X$
+                    which is point separating, closed under addition and contains the constants function.
+                </p>
+                <p>Sigmoidal activation function : A function $\phi : \mathbb{R} \rightarrow\mathbb{R}$ s.t. $\phi(t) \rightarrow a$ for $t\rightarrow\infty$ and $\phi(t) \rightarrow b \neq a$ for $t\rightarrow-\infty$</p>
+                <p>A neural network $g$ is a linear combination of functions of type $\phi \circ (f_i + \beta_i)$ for some number $\beta_i$, i.e.
+                    $$g(x) = \sum_{i=1}^N \alpha_i \phi (f_i(x) + \beta_i)$$
+                    for $x \in X$. We say that the neural network has N hidden nodes and one hidden layer.
+                </p>
+            </div>
+            
+            <div class="lecture" id="UniversalApproximation">
+                <h2> Universal Approximation Theorem</h2>
+                <p>
+                    The universal Approximation Theorem (UAT) is a fundamental result in the field of machine learning and artificial neural networks.
+                    It states that a neural network with a single hidden layer, containing a sufficient number of neurons, can approximate any continuous function to arbitrary precision on a compact input domain. 
+                    In other words, a feedforward neural network with just one hidden layer can potentially learn and represent any complex mapping between inputs and outputs.
+                </p>
+
+            </div>
+            <!-- LECTURE 4 -->
+            <div class="lecture" id="PricingandHedging">
+                <h2>Basic principles of pricing and hedging</h2>
+                <p>
+                    Pricing and hedging are fundamental concepts in finance, especially in the context of derivatives and risk management. Let's go over some basic principles and mathematical definitions related to these concepts.
+                </p>
+                <p>
+                    Pricing refers to determining the fair value of financial instruments, such as options, futures, and other derivatives. The goal is to assess what these instruments are worth in the market.
+                </p>
+                <p>
+                    Hedging involves taking positions in financial instruments to offset potential losses or gains in another investment. The idea is to reduce the risk associated with an existing position.
+                </p>  
+                <p>
+                    Self-financing refers to a strategy where the initial investment in a portfolio is maintained without any external funding or withdrawal. In other words, the portfolio is self-sustaining and doesn't require additional cash injections or withdrawals over time.
+                    Mathematically, for a self-financing portfolio, the value of the portfolio at any point in time should depend only on the values of the underlying assets in the portfolio and not require any additional funds. If we denote the value of the portfolio at time t as V(t), and the values of the underlying assets as S1(t), S2(t), ..., Sn(t), then the self-financing condition can be expressed as:
+                    $$V(t+1) = V(t) + Σ(w_i * (S_i(t+1) - S_i(t)))$$
+                    Where:
+                </p>
+                <ul>
+                    <li>$V(t)$ is the value of the portfolio at time $t$</li>
+                    <li>$w_i$ is the weight of the $i$-th asset in the portfolio</li>
+                    <li>$S_i(t)$ is the value of the $i$-th asset at time t</li>
+                    <li>$\Sigma$ represents the sum over all assets</li>
+                </ul>
+                <p>
+                    Arbitrage refers to taking advantage of price discrepancies between different markets or securities to make a riskless profit. Free arbitrage occurs when you can exploit these discrepancies without making any initial investment or taking any risk.
+                    In the context of pricing and hedging, the absence of free arbitrage is a key assumption. It means that there are no opportunities for investors to make riskless profits without investing any capital. If free arbitrage were possible, it would undermine the integrity of financial markets and the pricing mechanisms of financial instruments.
+                    These principles provide a foundation for understanding how financial instruments are priced and how risk can be managed through hedging strategies. They form the basis for more complex theories like the Black-Scholes model for option pricing and the concept of the no-arbitrage principle in modern finance.
+                </p>
+            </div>
+            <!-- LECTURE 9 -->
+            <div class="lecture" id="DeepHedging">
+                <h2> Deep Hedging</h2>
+                <p>
+                    Deep hedging refers to a concept in quantitative finance and risk management that involves using deep learning techniques, such as neural networks, to optimize and manage the hedging of financial derivatives. Hedging is a strategy used to mitigate the risk associated with price fluctuations of underlying assets.
+                    Traditional methods of hedging involve constructing a portfolio of financial instruments (often derivatives) in such a way that changes in the value of the portfolio offset changes in the value of the underlying asset. Deep hedging takes this a step further by using advanced machine learning algorithms, particularly deep neural networks, to make more adaptive and dynamic hedging decisions.In deep hedging, a neural network is trained to learn the relationship between various market factors, such as asset prices, interest rates, and volatilities, and the optimal hedging strategy. This approach can potentially provide more accurate and efficient hedging, especially in complex and fast-changing markets.
+                    Deep hedging has gained attention because of its potential to handle non-linear relationships and capture intricate market dynamics that traditional methods might miss. However, it's worth noting that implementing deep hedging strategies involves challenges related to model interpretability, data quality, overfitting, and the need for extensive computational resources.
+                </p>
+                <h3> Example : Black Scholes model in one dimension</h3>
+                <p>
+                    Let $T$ be a finite time horizon and consider a filtered probability space $(\Omega, (\mathcal{F}_{0\leq t \leq T}), \mathcal{F}_T, P)$ a standard Black Scholes model with interest rate $r=0$ and the price of the risky asset $S$ being desribed by
+                    $$ dS_t = S_t \mu dt + S_t \sigma dW_t^\mathbb{P}, S_0=S_0$$ 
+                    under the physical measure $\mathbb{P}$. Here, $\mu \geq0, \sigma \neq 0, S_0 >0$ and $W^\mathbb{P}$ is a Brownian motion (under $\mathbb{P}$).
+                    Under the unique risk neutral probability measure, denoted by $\mathbb{Q}$, the dynamics are then given by
+                    $$dS_t = S_t \sigma dW_t, S_0= S_0$$
+                    where $W$ is a $\mathbb{Q}$-Brownian motion.
+                </p>
+                <p>
+                    We consider here the problem of hedging a $\mathcal{F}_T$-measurable claim $f(S_T)$. In the case of Black Scholes model the heding strategy can be found by te Delta hedge, i.e.
+                    $$\Delta(t,s)=\partial_s \mathbb{E}_Q [f(S_T)|S_t=s]. $$
+                    In more involved models this is no longer possible. In particular, in incomplete models, not every claim can be hedged and we thus need to optimize a hedging criterion.
+                    We here consider a quadratic hedging criterion but other risk measures are also possible.
+                </p>
+                <p>
+                    Let $\pi$ denote the price of the option, i.e. $\mathbb{E}_Q[f(S_T)]$. Then, the goal is to solve the following optimization problem:
+                    $$ \inf_{H predictable} \mathbb{E}[(f(S_T)-\pi-(H \cdot S)_T)^2],$$
+                    where $(H_t)$ ranges over all predictable process and $(H \cdot S)_T = \int_0^T H_t dS_t$ denotes the stochastic Ito integral. Optimizing over all predictable processes is infeasible.
+                </p>
+                <p>
+                    Therefore, we choose to specify $H_t$ in a smaller set: for each $t$ as a neural network whose input can be specified. In complete Markovian models, as it is the case of the Black Scholes model, we know fro mthe delta hedging strategy that it makes sense to parameterize $H_t$ as a function of the current price $S_t$.
+                    In the current setting we therefore choose that the input of each neural network in the implementation below depends only on the current price, i.e. 
+                    $$ H_t = g_t(S_t)$$
+                    and $g_t$ denotes a neural network.
+                </p>
+            </div>
+            <!-- END LECTURE 9 -->
+
+            <!-- END LECTURES -->
+
+        </div>
+        
+    </body>
+</html>

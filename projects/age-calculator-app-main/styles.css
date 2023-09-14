@@ -1,0 +1,269 @@
+/* #region reset styles */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* #endregion */
+  
+  /* #region fonts */
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+  /* #endregion */
+  
+  /* #region page & common */
+  :root {
+    --bg-color: #f0f0f0;
+    --light-grey: #dbdbdb;
+    --smokey-grey: #716f6f;
+    --purple: #854dff;
+    --off-black: #141414;
+    --light-red: #ff5757;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+  }
+  
+  input[type=number] {
+    width: 118%;
+    height: 3.3rem;
+    text-indent: 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--off-black);
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+  }
+  
+  input[type=number]:focus {
+    outline: 1px solid var(--smokey-grey);
+  }
+  
+  input[type=number]::placeholder {
+    color: var(--smokey-grey);
+    opacity: .8;
+  }
+  
+  .error-msg {
+    color: var(--light-red);
+    font-style: italic;
+  }
+  /* #endregion */
+  
+  /* #region main */
+  .container {
+    max-width: 600px;
+    margin: 88px 16px;
+    padding: 48px 23px;
+    background-color: white;
+    border-radius: 24px;
+  }
+  /* #endregion */
+  
+  /* #region forms */
+  
+  .date-input__row {
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 32px;
+  }
+  
+  .date-label {
+    text-transform: uppercase;
+    color: var(--smokey-grey);
+    font-weight: 700;
+    font-size: .75rem;
+    letter-spacing: .19rem;
+  }
+  
+  .form-control {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  
+  .row-2 {
+    position: relative;
+    justify-content: center;
+    z-index: 5;
+  }
+  
+  .calculate-btn {
+    width: 64px;
+    height: 64px;
+    padding: 10px;
+    background-color: var(--purple);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  .calculate-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    height: 1px;
+    background-color: var(--light-grey);
+    z-index: -1;
+  }
+  .calculate-btn:hover {
+    background-color: var(--off-black);
+  }
+  
+  .icon-arrow {
+    width: 26px;
+  }
+  /* #endregion */
+  
+  /* #region results */
+  .date-result {
+    display: flex;
+    flex-direction: column;
+    font-size: 3.375rem;
+    font-weight: 800;
+    line-height: 60px;
+    font-style: italic;
+    color: var(--off-black);
+  }
+  
+  .num {
+    color: var(--purple);
+  }
+  /* #endregion */
+  
+  /* #region responsiveness */
+  @media (min-width: 425px) {
+    .container {
+      margin: 100px 5%;
+    }
+  
+    .date-input__row {
+      justify-content: space-between;
+    }
+  
+    .row-2 {
+      justify-content: flex-end;
+    }
+  
+    .form-control {
+      flex-basis: 30%;
+    }
+  
+    input[type=number] {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 650px) {
+    .container {
+      margin: 100px auto;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 840px;
+      margin: 154px auto;
+      padding: 56px;
+      border-bottom-right-radius: 28%;
+    }
+  
+    .date-input__row {
+      justify-content: flex-start;
+      column-gap: 32px;
+      margin-bottom: 0;
+    }
+  
+    .row-2 {
+      justify-content: flex-end;
+    }
+  
+    .form-control {
+      max-width: 160px;
+      flex-basis: auto;
+      row-gap: 8px;
+    }
+  
+    .date-label {
+      font-size: .96rem;
+      letter-spacing: .12rem;
+    }
+  
+    input[type=number] {
+      height: 72px;
+      font-size: 30px;
+      text-indent: 20px;
+    }
+  
+    .calculate-btn {
+      width: 96px;
+      height: 96px;
+    }
+  
+    .icon-arrow {
+      width: 46px;
+    }
+  
+    .date-result {
+      font-size: 100px;
+      line-height: 114px;
+    }
+  }
+  /* #endregion */

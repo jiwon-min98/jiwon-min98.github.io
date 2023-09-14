@@ -1,0 +1,383 @@
+:root {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+
+    color-scheme: light dark;
+    color: var(--dark-grayish-blue);
+    background-color: var(--off-white);
+
+    /* primaries */
+
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* neutrals */
+
+    --off-white: hsl(36, 100%, 99%);
+    --greyish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    /* outline: 1px solid red; */
+  }
+
+  body {
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100vh;
+    max-width: 1280px;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .transparent {
+    opacity: 0;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  .header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5em 1em;
+  }
+
+  .logo {
+    display: grid;
+    place-items: center;
+  }
+
+  .logo svg {
+    all: unset;
+  }
+
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .desktop-nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1.25em;
+  }
+
+  .desktop-nav li a {
+    font-size: 1.25em;
+    line-height: 1;
+    padding: 0.2em 0.3em;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .desktop-nav li a:hover {
+    color: var(--soft-red);
+  }
+
+  .nav-bar button {
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .menu-items {
+    list-style-type: none;
+    padding: 0;
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 320px;
+    background-color: var(--off-white);
+    padding: 1.5em 1em 1.5em 2em;
+    transition: visibility 1s, transform 0.2s;
+  }
+
+  .hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+
+  .menu-items li {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+  }
+
+  .menu-items li:first-child {
+    margin-bottom: 6em;
+  }
+
+  .menu-items li button {
+    margin-left: auto;
+  }
+
+  .menu-items li a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.375em;
+  }
+
+  main {
+    padding: 1em 1.25em 2.5em;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5em 1.5em;
+  }
+
+  .article-card {
+    grid-column: span 8;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5em;
+  }
+
+  .article-card picture {
+    grid-column: span 12;
+  }
+
+  .article-image {
+    width: 100%;
+  }
+
+  .article-title {
+    color: var(--very-dark-blue);
+    font-size: 3.9375em;
+    font-weight: 800;
+    line-height: 1;
+    grid-column: span 5;
+  }
+
+  .content {
+    grid-column: 7 / span 6;
+  }
+
+  .article-metadata {
+    font-size: 1.125em;
+    margin-bottom: 2em;
+  }
+
+  .read-more {
+    border: 0;
+    padding: 0.9em 1.5em;
+    color: var(--off-white);
+    background-color: var(--soft-red);
+    font-size: 1.2em;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+  }
+
+  .read-more:hover,
+  .read-more:focus {
+    background-color: var(--very-dark-blue);
+  }
+
+  .sidebar {
+    grid-column: span 4;
+  }
+
+  .sidebar-title {
+    color: var(--soft-orange);
+    font-size: 2em;
+  }
+
+  .featured-articles {
+    padding: 1.8em 1.5em;
+    color: var(--off-white);
+    background-color: var(--very-dark-blue);
+  }
+
+  .sidebar-article-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.8em;
+  }
+
+  .sidebar-article-list li:first-child {
+    border-top: 1px solid transparent;
+    margin-bottom: 1.6em;
+  }
+
+  .sidebar-article-list li:not(:first-child, :last-child) {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--dark-grayish-blue);
+    padding: 2em 0;
+  }
+
+  .sidebar-article-list li:last-child {
+    border-bottom: 1px solid transparent;
+    margin-top: 1.6em;
+  }
+
+  .sidebar-article-list li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sidebar-article-list li a:hover h3 {
+    color: var(--soft-orange);
+  }
+
+  .sidebar-article-list li a h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .sidebar-article-list li a p {
+    font-size: 1.125em;
+    margin: 0.5em 0;
+  }
+
+  .popular-articles {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .popular-articles a {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25em;
+    color: inherit;
+    text-decoration: none;
+    grid-column: span 4;
+  }
+
+  .popular-articles a:hover div h3 {
+    color: var(--soft-red);
+  }
+
+  .popular-articles a img {
+    grid-column: span 4;
+  }
+
+  .popular-articles a div {
+    grid-column: span 8;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .popular-articles a div h2 {
+    font-size: 2.5em;
+    line-height: 1;
+  }
+
+  .popular-articles a div h3 {
+    font-size: 1.325em;
+    color: var(--very-dark-blue);
+  }
+
+  .popular-articles a div p {
+    font-size: 1.09em;
+  }
+
+  @media screen and (min-width: 769px) {
+    .nav-bar button[type='menu'],
+    .nav-bar .menu-items {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .header-container {
+      padding: 1.8em 1em;
+    }
+
+    main {
+      padding: 0.5em 1.125em 2.5em;
+    }
+
+    .article-title {
+      font-size: 3em;
+    }
+
+    .article-metadata {
+      font-size: 0.9575em;
+    }
+
+    .read-more {
+      font-size: 1em;
+    }
+
+    .article-card,
+    .article-title,
+    .content,
+    .sidebar,
+    .popular-articles a {
+      grid-column: span 12;
+    }
+
+    .popular-articles a div h3 {
+      font-size: 1.125em;
+    }
+
+    .popular-articles a div p {
+      font-size: 0.9375em;
+    }
+
+    .sidebar {
+      margin: 2em 0;
+    }
+
+    .sidebar-article-list li a h3 {
+      font-size: 1.25em;
+    }
+
+    .sidebar-article-list li a p {
+      font-size: 0.9375em;
+    }
+  }
+  
