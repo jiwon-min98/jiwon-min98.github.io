@@ -5,9 +5,14 @@
 }
 
 p, li {
-    color: #666;
+    color: #333;
     font-size: 22px;
 }
+
+a {
+    text-decoration: none;
+}
+
 
 
 /* Global Styles */
@@ -18,21 +23,21 @@ html{
     -webkit-tap-highlight-color:transparent;
 }
 body {
-    font-family: 'Poppins','Pretendard', sans-serif;
+    font-family: 'Lora','Poppins', sans-serif;
     line-height: 1.6;
 }
 
 section{
     position: relative;
     height:90vh;
-    padding-top:60px;
+    padding-top:73px;
 }
 
 .section-title{
     font-size: 32px;
 }
 .container {
-    max-width: 950px;
+    max-width: 80vw;
     margin: 0 auto;
     padding: 50px;
 }
@@ -41,18 +46,30 @@ section{
     justify-content: space-between;
 }
 
+.fi{
+    font-size: 40px;
+    margin-right: 20px;
+}
+
 
 /* Navigation styles */
 .nav {
-    padding: 0;
+    padding:10px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     text-align: center;
-    background-color: #fff;
+    background-color: #F6F4EB;
+    border-bottom: #666 1px solid;
 }
+
+.nav-container{
+    max-width: 90vw;
+    margin:0 auto;
+}
+
 
 .nav-list {
     list-style-type: none;
@@ -64,7 +81,7 @@ section{
     margin: 0 15px;
 }
 
-.nav-list a {
+.nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -77,27 +94,77 @@ section{
 
 /* Welcome Section Styles */
 .welcome-section {
-    background-color: #f4f4f4;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(samantha-gades-BlIhVfXbi9s-unsplash.jpg);
+    background-size: cover;
+    height:80vh;
     padding-top: 180px;
 }
 
 
 .profile-pic{
-    border-radius: 45%;
+    border-radius: 90%;
 }
+
 .welcome-content{
     margin:20px;
 }
 
-.name {
-    font-size: 36px;
-    color: #333;
+.light{
+    color: #f4f4f4;
 }
+
+.fi-rr-angle-down{
+    position:absolute;
+    margin:0;
+    padding:0;
+    top:80%;
+    left: 50%;
+    right: 50%;
+    animation: updown 1s ease infinite;
+
+}
+@keyframes updown {
+    0% {
+      transform: translateY(-15%);
+    }
+  
+    50% {
+      transform: translateY(10%);
+    }
+  
+    100% {
+      transform: translateY(-15%);
+    }
+  }
 
 .bold{
     font-weight: bold;
 }
 
+.welcome-content p{
+    font-size: 30px;
+}
+
+.about-me-section{
+    background:#f4f4f4;
+}
+
+.about-me-content {
+    display: flex;
+    justify-content: center;
+    width:70vw;
+    margin-top:40px;
+
+}
+.about-me-icons{
+    margin-left:5vw;
+}
+.icon {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
 
 /* Education Section Styles */
 .education-section {
@@ -165,4 +232,18 @@ section{
 
 .skill{
     margin-top:20px;
+}
+
+/*footer*/
+footer{
+    background-color: #333;
+    color:#f4f4f4;
+    padding:30px;
+    text-align: center;
+
+}
+
+footer p {
+    font-size: 14px;
+    
 }

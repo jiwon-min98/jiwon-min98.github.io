@@ -8,30 +8,70 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav id="navbar" class="nav">
-        <ul class="nav-list">
-            <li><a href="#welcome-section">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#skills">Skills</a></li>
-        </ul>
+        <div class="nav-container display-flex">
+            <a href= "/"><h1>JIWONMIN.</h1></a>
+            <ul class="nav-list">
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+
+        </div>
     </nav>
 
     <!-- Welcome Section -->
     <section id="welcome-section" class="welcome-section">
-        <div class="container display-flex">
+        <div class="container">
             <div class="welcome-content">
-                <h1 class="section-title">About Me</h1>
-                <p> HI! My name is <span class="name bold">Ji Won Min</span>,
+                <p class="light"> HI! I'm <span class="bold">JI WON</span>,
                 a passionate mathematics enthusiast with a keen interest in the world of <span class="bold">statistics, coding, and data analysis</span>. From deciphering complex mathematical theories to harnessing the power of data to <span class="bold">solve real-world problems</span>, I thrive on exploring the intricate connections between numbers, patterns, and the digital realm.
                 </p>
             </div>
-            <img src="IMG_6400.JPG" width = "20%" class="profile-pic">
+            <i class="fi light fi-rr-angle-down"></i>
+        </div>
+    </section>
+
+    <section id = "about-me" class="about-me-section">
+        <div class="container">
+            <h1 class="section-title">About Me</h1>
+            <div class="about-me-content">
+                <img src="IMG_6400.JPG" width = "250px" class="profile-pic">
+                <div class="about-me-icons">
+                    <div class="icon">
+                        <i class="fi fi-sr-user" ></i>
+                        <span><h3>Name </h3> <p>Ji Won Min</p></span>
+                    </div>
+                    <div class="icon">
+                        <i class="fi fi-sr-calendar"></i>
+                        <span><h3>Birth Date  </h3><p>10/10/1998</p></span>
+                    </div>
+                    <div class="icon">
+                        <i class="fi fi-sr-marker"></i>
+                        <span><h3>Location  </h3><p>Zürich, Switzerland</p></span>
+                    </div>
+                    <div class="icon">
+                        <i class="fi fi-sr-envelope" ></i>
+                        <span><h3>E-mail  </h3> <p>mjiwon1010@naver.com</p></span>
+                    </div>
+                    <div class="icon">
+                        <i class="fi fi-sr-phone-call"></i>
+                        <span><h3>Phone  </h3><p> +41 78 735 68 19</p></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
@@ -162,8 +202,20 @@
                 </div>
             </div>
         </div>
-
     </section>
+    <footer>
+        <div class="footer-content">
+            <div class="socials">
+                <a href="https://github.com/jiwon-min98"><i class="fi light fi-brands-github"></i></a>
+                <a href="https://www.youtube.com/@Znlsji/"><i class="fi light fi-brands-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/ji-won-min-3157461b7"><i class="fi light fi-brands-linkedin"></i></a>
+                <a href="https://www.instagram.com/_minjiwon/"><i class="fi light fi-brands-instagram"></i></a>
+            </div>
+            <p class="light">© 2023. Min Ji Won. All rights reserved.</p>
+            
+        </div>
+        
+    </footer>
     
     
 </body>
