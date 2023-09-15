@@ -95,12 +95,11 @@ section{
 /* Welcome Section Styles */
 .welcome-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(samantha-gades-BlIhVfXbi9s-unsplash.jpg);
+    url(background-image.jpg);
     background-size: cover;
     height:80vh;
     padding-top: 180px;
 }
-
 
 .profile-pic{
     border-radius: 90%;
