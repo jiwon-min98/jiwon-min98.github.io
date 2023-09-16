@@ -205,13 +205,12 @@ section{
     text-decoration: none;
     color:#333;
 }
-/*.project a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
+
+.portfolio-contents img{
+    border: 1px solid #838181;
+    border-radius: 2px;
     transition: background-color 0.3s ease;
+    width:250px;
 }*/
 
 .project a:hover {
@@ -254,5 +253,4 @@ footer{
 
 footer p {
     font-size: 14px;
-    
 }
