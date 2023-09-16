@@ -154,10 +154,11 @@ section{
     justify-content: center;
     width:70vw;
     margin-top:40px;
-
 }
-.about-me-icons{
-    margin-left:5vw;
+
+.about-me-content img {
+    margin-left:10vw;
+
 }
 .icon {
     display: flex;
