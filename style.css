@@ -210,12 +210,14 @@ section{
     border: 1px solid #838181;
     border-radius: 2px;
     width:250px;
+    height:130px;
     position:relative;
+    margin: 20px;
 }
 
 .portfolio-item img{
     width: 100%;
-    height:auto;
+    height: 100%;
     display: block;
 }
 
